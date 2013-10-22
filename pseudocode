@@ -1,0 +1,38 @@
+SUDOKU SOLVER
+
+Assuming puzzle entered follows these conditions:
+  1. all integers are between (1..9)
+  2. blank positions == 0
+  3. entered as 2D-array
+
+1. create hash marking each position. each position key contains possible values stored in array. Each array is initially filled with numbers in range 1..9.
+  a. if puzzle[n][n] == 0
+    i. scan row. if value found in row is included in position array, delete from possible values
+    ii. scan column. if value found in column is included in position array, delete from possible values
+    iii. scan puzzle if value found in puzzle is included in position array, delete from possible values
+    iv. scan through hash, if hash[key].size == 1, then puzzle at that position is filled with hash[key][0]. Delete hash[key] from hash.
+
+2. loop through every single position
+  a. to do this, for loop each row, nest for loop for each column in each row. range is index (0..puzzle.length-1) for rows, (0..puzzle[0].length-1) for columns
+
+3. create loop around entire structure: continue looping while zeroes still exist in puzzle
+
+TECHNIQUES TO IMPLEMENT:
+
+naked pair
+naked triple
+naked quad
+naked quint
+
+x-wing
+
+NAKED PAIR
+
+1. scan through candidates for each position. 
+2. if equal, then check the following:
+  a. if pair is in the same subgrid
+    i. if true, then scan through all other candidates in subgrid and delete values contain numbers equal to those in the naked pair
+  b. if pair is in the same row
+    i. if true, then scan through all other candidates in row and delete values contain numbers equal to those in the naked pair
+  c. if pair is in the same collect
+    i. if true, then scan through all other candidates in col and delete values contain numbers equal to those in the naked pair

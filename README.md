@@ -1,8 +1,6 @@
 Sudoku Solver
 =============
 
-This README will be updated as the solver changes. *Updated on Oct 22, 2013*
-
 Currently the solver assumes the following conditions:
 
   - puzzle is entered into solver method as a 2D-array. 
